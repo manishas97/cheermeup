@@ -1,3 +1,5 @@
+npm install bootstrap@3
+run npm intall
 var gulp = require('gulp');
 var less = require('gulp-less');
 var sass = require('gulp-sass');
