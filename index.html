@@ -13,6 +13,12 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./audiojs/audio.min.js"></script>
+       <script>
+         audiojs.events.ready(function() {
+           audiojs.createAll();
+         });
+       </script>
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -23,12 +29,8 @@
 
     <!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
-    <script src="/audiojs/audio.min.js"></script>
-    <script>
-       audiojs.events.ready(function() {
-       var as = audiojs.createAll();
-         });
-    </script>
+  <link href="css/filter.css" rel="stylesheet">
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -60,16 +62,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#introduction">Welome</a>
+                        <a class="page-scroll" href="#introduction">Welcome</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#recipe">Recipes</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#surprise">Surprise me</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -87,8 +86,9 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Explore our delicious recipes to bring you joy this festive season!</div>
                 <div class="intro-heading">Happy Holidays!</div>
-                <a href="#introduction" class="page-scroll btn btn-xl">Intorduction</a>
+                <a href="#introduction" class="page-scroll btn btn-xl">Introduction</a>
                 <a href="#recipe" class="page-scroll btn btn-xl">Recipes</a>
+                <a href="#recipe" class="page-scroll btn btn-xl">Surprise</a>
                 <a href="#contact" class="page-scroll btn btn-xl">Contact</a>
             </div>
         </div>
@@ -98,30 +98,32 @@
     <div class="container">
       <div class="col-lg-12 text-center">
           <h2 class="section-heading">Welcome!</h2>
-         <h3 class="section-subheading">A car showroom for all verities of cars to display</h3>
+         <h3 class="section-subheading">This site is a holiday-edition recipe diary. <br> Explore recipes in the Recipe section. <br>
+         Contact us for more information or suggestions.
+          <br> And don't forget to check out the Surprise Me! section to discover the highlight of your day. </h3>
       </div><hr/>
 
 <!-- Recipe Section -->
+
     <section id="recipe" class="bg-light-gray">
           <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
                       <h2 class="section-heading">Recipes</h2>
-                      <h3 class="section-subheading">Lorem ipsum dolor sit amet consectetur.</h3>
+                      <h3 class="section-subheading">Make sure you have your stretchy pants and a bottle of wine .<br>If you have dietary constraints, please make use of the fitering option.</h3>
                   </div>
-              </div>
+        </div>
 
-            </div>
 
-            <div>
-                <button class="btn btn-primary filter-button" data-filter="all">All</button>
-                <button class="btn btn-default filter-button" data-filter="photo">Vegetarian</button>
-                <button class="btn btn-default filter-button" data-filter="graphic">Vegan</button>
-                <button class="btn btn-default filter-button" data-filter="webdesign">Gluten-free</button>
+            <div class="row">
+            <button class="btn btn-primary" id="all">All</button>
+            <button class="btn btn-primary" id="vegan">Vegan</button>
+            <button class="btn btn-primary" id="gf">Gluten-free</button>
+            <button class="btn btn-primary" id="veg">Vegetarian</button>
             </div>
             <br/>
-              <div class="row">
-                <div class=" col-md-4 col-sm-5 recipe-item">
+              <div class="row grid">
+                <div class=" col-md-4 col-sm-5 recipe-item grid-item all">
                     <a href="#recipeModal2" class="recipe-link" data-toggle="photo">
                         <div class="recipe-hover">
                             <div class="recipe-hover-content">
@@ -132,7 +134,7 @@
                         <img src="img/recipe/blackforest.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-5 recipe-item graphic">
+                <div class=" col-md-4 col-sm-5 recipe-item grid-item vegan veg all">
                     <a href="#recipeModal5" class="recipe-link" data-toggle="modal">
                         <div class="recipe-hover">
                             <div class="recipe-hover-content">
@@ -143,7 +145,7 @@
                         </div>
                         <img src="img/recipe/cupcakevegan2.jpg" class="img-responsive" alt="">
                     </a>
-                </div><div class="col-md-4 col-sm-5 recipe-item">
+                </div><div class="col-md-4 col-sm-5 recipe-item grid-item all">
                     <a href="#recipeModal3" class="recipe-link" data-toggle="modal">
                         <div class="recipe-hover">
                             <div class="recipe-hover-content">
@@ -157,7 +159,7 @@
 
               </div>
 
-              <div class="col-md-4 col-sm-5 recipe-item">
+              <div class="col-md-4 col-sm-5 recipe-item grid-item gf vegan veg all">
                   <a href="#recipeModal4" class="recipe-link" data-toggle="modal">
                       <div class="recipe-hover">
                           <div class="recipe-hover-content">
@@ -166,10 +168,8 @@
                       </div>
                       <img src="img/recipe/mulledwine.jpg" class="img-responsive" alt="">
                   </a>
-
             </div>
-
-            <div class="col-md-4 col-sm-5 recipe-item">
+            <div class="col-md-4 col-sm-5 recipe-item grid-item gf vegan veg all">
                 <a href="#recipeModal6" class="recipe-link" data-toggle="modal">
                     <div class="recipe-hover">
                         <div class="recipe-hover-content">
@@ -178,10 +178,8 @@
                     </div>
                     <img src="img/recipe/sweetyam.jpg" class="img-responsive" alt="">
                 </a>
-
           </div>
-
-          <div class="col-md-4 col-sm-5 recipe-item">
+          <div class="col-md-4 col-sm-5 recipe-item grid-item vegan veg all" >
               <a href="#recipeModal7" class="recipe-link" data-toggle="modal">
                   <div class="recipe-hover">
                       <div class="recipe-hover-content">
@@ -191,10 +189,8 @@
                   </div>
                   <img src="img/recipe/vegan3jpg.jpg" class="img-responsive" alt="">
               </a>
-
         </div>
-
-        <div class="col-md-4 col-sm-5 recipe-item">
+        <div class="col-md-4 col-sm-5 recipe-item grid-item gf vegan veg all" >
             <a href="#recipeModal8" class="recipe-link" data-toggle="modal">
                 <div class="recipe-hover">
                     <div class="recipe-hover-content">
@@ -204,10 +200,8 @@
                 </div>
                 <img src="img/recipe/Ratatouille.jpg" class="img-responsive" alt="">
             </a>
-
         </div>
-
-        <div class="col-md-4 col-sm-5 recipe-item">
+        <div class="col-md-4 col-sm-5 recipe-item grid-item all">
             <a href="#recipeModal9" class="recipe-link" data-toggle="modal">
                 <div class="recipe-hover">
                     <div class="recipe-hover-content">
@@ -217,10 +211,8 @@
                 </div>
                 <img src="img/recipe/pastabake.jpg" class="img-responsive" alt="">
             </a>
-
-        </div>
-
-        <div class="col-md-4 col-sm-5 recipe-item">
+       </div>
+        <div class="col-md-4 col-sm-5 recipe-item grid-item all" >
             <a href="#recipeModal10" class="recipe-link" data-toggle="modal">
                 <div class="recipe-hover">
                     <div class="recipe-hover-content">
@@ -230,14 +222,34 @@
                 </div>
                 <img src="img/recipe/eggnog.jpg" class="img-responsive" alt="">
             </a>
-
         </div>
 
 
 
-
+    </div>
           </div>
       </section><hr>
+     <!-- Cooking Memes Section -->
+     <section id="surprise" class="bg-light-gray">
+           <div class="container">
+         <div class="row">
+           <div class="col-lg-12 text-center">
+                       <h2 class="section-heading">Surprise me!</h2>
+                       <h3 class="section-subheading">Here is a little something to cheer you up! Click on a song to play while browsing through the website</h3>
+
+            </div>
+             </div>
+
+<audio preload></audio>
+<div id="accordion">
+  <ol>
+    <a href="#" data-src="audio/alliwant.mp3"><h3>All I want for Christmas is you</h3></a>
+    <a href="#" data-src="audio/ibelieve.mp3"><h3>I believe</h3></a>
+    <a href="#" data-src="audio/snow.mp3"><h3>It's the most wonderful time of the year</h3></a>
+    <a href="#" data-src="audio/letitsnow.mp3"><h3>Let it snow,let it snow</h3></a>
+  </ol>
+</div><hr>
+
     <!-- Contact Section -->
     <section id="contact" class="bg-light-gray">
         <div class="container">
@@ -831,20 +843,30 @@ Preheat the oven to 425 degrees Fahrenheit.
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/filter.min.js"></script>
 
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/audiojs/audio.min.js"></script>
+    <script>
+audiojs.events.ready(function() {
+audiojs.createAll();
+});
+</script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0.1/dist/isotope.pkgd.min.js"></script>
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
-
+    <script src="js/filter.min.js"></script>
+    <script src="audiojs/random.min.js"></script>
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
+
 
 </body>
 
