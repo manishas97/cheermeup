@@ -337,6 +337,18 @@ section h3.section-imagetitle {
   margin: 0 0 15px;
   right: 0;
 }
+#recipe .recipe-item .vegan {
+  margin: 0 0 15px;
+  right: 0;
+}
+#recipe .recipe-item-gluten {
+  margin: 0 0 15px;
+  right: 0;
+}
+#recipe .recipe-item-veg {
+  margin: 0 0 15px;
+  right: 0;
+}
 #recipe .recipe-item .recipe-link {
   display: block;
   position: relative;
